@@ -114,11 +114,11 @@ public class MainWindow extends JFrame{
 		deleteButton.setBounds(300, 480, 50, 50);
 		add(deleteButton);
 		
-		Image saveImg = new ImageIcon("src/images/save1.png").getImage();
-		saveButton = new JButton(new ImageIcon(saveImg.getScaledInstance(50, 50, Image.SCALE_SMOOTH)));
+		Image saveImg = new ImageIcon("src/images/save.png").getImage();
+		saveButton = new JButton(new ImageIcon(saveImg.getScaledInstance(45, 45, Image.SCALE_SMOOTH)));
 		saveButton.setBorderPainted(false);
 		saveButton.setBackground(new Color(225,250,252));
-		saveButton.setBounds(410, 480, 50, 50);
+		saveButton.setBounds(410, 480, 45, 45);
 		add(saveButton);
 		
 	}
