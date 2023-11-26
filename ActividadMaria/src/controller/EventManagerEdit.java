@@ -58,21 +58,21 @@ public class EventManagerEdit implements ActionListener{
 			}
 			
 			//Comprobamos que el contacto no esté guardado ya en la tabla
-//			for(int i = 0; i < rowNumber; i++) {
-//				
-//				if(window.getTableModel().getValueAt(i, 0).toString().equalsIgnoreCase(name) )  {
-//					text = "Ya existe este contacto con un número de teléfono guardado en la tabla";
-//					JOptionPane.showMessageDialog(null, text, "", JOptionPane.ERROR_MESSAGE);
-//					editWindow.getPhoneTextF().requestFocus();
-//					return false;
-//				} else if (window.getTableModel().getValueAt(i, 1).toString().equals(newPhone)){
-//					text = "Este número ya está guardado en la tabla";
-//					JOptionPane.showMessageDialog(null, text, "", JOptionPane.ERROR_MESSAGE);
-//					editWindow.getPhoneTextF().requestFocus();
-//					return false;
-//				}
-//			
-//			}
+			for(int i = 0; i < rowNumber; i++) {
+				
+				if(window.getTableModel().getValueAt(i, 0).toString().equalsIgnoreCase(name) )  {
+					text = "Ya existe este contacto con un número de teléfono guardado en la tabla";
+					JOptionPane.showMessageDialog(null, text, "", JOptionPane.ERROR_MESSAGE);
+					editWindow.getPhoneTextF().requestFocus();
+					return false;
+				} else if (window.getTableModel().getValueAt(i, 1).toString().equals(newPhone)){
+					text = "Este número ya está guardado en la tabla";
+					JOptionPane.showMessageDialog(null, text, "", JOptionPane.ERROR_MESSAGE);
+					editWindow.getPhoneTextF().requestFocus();
+					return false;
+				}
+			
+		}
 				return true;
 		} catch (Exception ex) {
 			text = "Introduce un número de teléfono correcto";

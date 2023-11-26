@@ -71,16 +71,6 @@ private boolean checkData() {
 			
 			}
 			
-//			//Comprobamos que el contacto no esté guardado ya en la tabla
-//			for(int i = 0; i < rowNumber; i++) {
-//				
-//				if(window.getTableModel().getValueAt(i, 0).toString().equalsIgnoreCase(name) && window.getTableModel().getValueAt(i, 1).toString().equals(phone)) {
-//					text = "Ese contacto ya está guardado en la tabla";
-//					JOptionPane.showMessageDialog(null, text, "", JOptionPane.ERROR_MESSAGE);
-//					addWindow.getPhoneTextF().requestFocus();
-//					return false;
-//				}
-//			}
 			
 			return true;
 		} catch (Exception ex) {
