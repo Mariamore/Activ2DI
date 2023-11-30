@@ -71,6 +71,12 @@ private boolean checkData() {
 			
 			}
 			
+			if(name.equals("")) {
+				text = "Introduce un nombre para el contacto";
+				JOptionPane.showMessageDialog(null, text, "", JOptionPane.ERROR_MESSAGE);
+				addWindow.getPhoneTextF().requestFocus();
+				return false;
+			}
 			
 			return true;
 		} catch (Exception ex) {

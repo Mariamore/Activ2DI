@@ -80,6 +80,12 @@ public class EventManagerEdit implements ActionListener{
 				}
 			
 		}
+			if(name.equals("")) {
+				text = "Introduce un nombre para el contacto";
+				JOptionPane.showMessageDialog(null, text, "", JOptionPane.ERROR_MESSAGE);
+				editWindow.getPhoneTextF().requestFocus();
+				return false;
+			}
 				return true;
 		} catch (Exception ex) {
 			text = "Introduce un número de teléfono correcto";
