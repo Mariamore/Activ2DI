@@ -45,31 +45,38 @@ public class EventManagerEdit implements ActionListener{
 		String newPhone = editWindow.getPhoneTextF().getText();
 		int rowNumber = window.getTableModel().getRowCount();
 		String text;
+		int row = window.getTable().getSelectedRow();
 	
 		//Comprobamos que el número de teléfono está solo compuesto por dígitos numéricos
 		try {
 			long phoneNumber = Long.parseLong(newPhone);
 			//Comprobamos que el teléfono solo tenga 9 dígitos
-			if(newPhone.length()>9 || newPhone.length()<9) {
+			if(newPhone.length() > 9 || newPhone.length() < 9) {
 				text = "El teléfono ha de tener 9 dígitos";
 				JOptionPane.showMessageDialog(null, text, "¡Error!", JOptionPane.ERROR_MESSAGE);
 				editWindow.getPhoneTextF().requestFocus();
 				return false;
 			}
 			
+		
+			
 			//Comprobamos que el contacto no esté guardado ya en la tabla
 			for(int i = 0; i < rowNumber; i++) {
 				
-				if(window.getTableModel().getValueAt(i, 0).toString().equalsIgnoreCase(name) )  {
-					text = "Ya existe este contacto con un número de teléfono guardado en la tabla";
-					JOptionPane.showMessageDialog(null, text, "", JOptionPane.ERROR_MESSAGE);
-					editWindow.getPhoneTextF().requestFocus();
-					return false;
-				} else if (window.getTableModel().getValueAt(i, 1).toString().equals(newPhone)){
-					text = "Este número ya está guardado en la tabla";
-					JOptionPane.showMessageDialog(null, text, "", JOptionPane.ERROR_MESSAGE);
-					editWindow.getPhoneTextF().requestFocus();
-					return false;
+				if(window.getTableModel().getValueAt(i, 0).toString().equalsIgnoreCase(name) &&  !window.getTableModel().getValueAt(row, 0).equals(name))  {
+					
+						text = "Ya existe este contacto con un número de teléfono guardado en la tabla";
+						JOptionPane.showMessageDialog(null, text, "", JOptionPane.ERROR_MESSAGE);
+						editWindow.getPhoneTextF().requestFocus();
+						return false;
+					
+				} else if (window.getTableModel().getValueAt(i, 1).toString().equals(newPhone) && !window.getTableModel().getValueAt(row, 1).equals(newPhone)){
+					
+						text = "Este número ya está guardado en la tabla";
+						JOptionPane.showMessageDialog(null, text, "", JOptionPane.ERROR_MESSAGE);
+						editWindow.getPhoneTextF().requestFocus();
+						return false;
+					
 				}
 			
 		}
